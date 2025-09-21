@@ -1,0 +1,370 @@
+@font-face {
+    font-family: 'Space Mono';
+    src: url(./assets/fonts/Space_Mono/SpaceMono-Bold.ttf)
+}
+
+:root {
+    --grey: hsl(185, 41%, 84%);
+}
+
+* {
+    font-size:20px;
+    font-family: 'Space Mono';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(185, 41%, 84%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 50px 20px 20px;
+    flex-direction: column;
+}
+
+.img {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.imgBill {
+    display: block;
+    margin: 0 auto;
+}
+
+.container {
+    background-color: hsl(0, 100%, 100%);
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 25px;
+    padding: 30px;
+    gap: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.calculatorContainer {
+    flex: 1;
+    padding: 10px;
+}
+
+.amount {
+    text-align: left;
+    color: hsl(186, 14%, 43%);
+    margin-bottom: 40px;
+    position: absolute;
+}
+
+.amount p.Bill {
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* ESTILOS PARA INPUT CON ICONO DE DÓLAR */
+.amount {
+    position: relative;
+}
+
+.amount img {
+    position: absolute;
+    left: 15px;
+    top: 55px;
+    z-index: 2;
+    width: 15px;
+    height: 15px;
+}
+
+.amount input {
+    background-color: hsl(189, 47%, 97%);
+    border: none;
+    width: 100%;
+    height: 50%;
+    padding: 5px;
+    padding-left: 40px;
+    color: hsl(183, 100%, 15%);
+    text-align: right;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+
+/* ESTILOS PARA INPUT CON ICONO DE PERSONA */
+.numberPeople-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+    margin: 40px auto;
+    color: hsl(184, 14%, 56%);
+    position: relative;
+}
+
+.numberPeople-container span {
+    font-weight: 700;
+}
+
+.numberOfPeople {
+    position: relative;
+}
+
+.numberOfPeople img {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 15px;
+    height: 15px;
+}
+
+.numberOfPeople input {
+    background-color: hsl(189, 47%, 97%);
+    border: none;
+    width: 100%;
+    height: 50%;
+    padding: 5px;
+    padding-left: 40px;
+    color: hsl(183, 100%, 15%);
+    text-align: right;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 5px;
+
+
+}
+
+
+/* BOTONES DE PORCENTAJE */
+.selectorPorcentajes {
+    margin: 40px 0;
+}
+
+.selectorPorcentajes p {
+    text-align: left;
+    color: hsl(186, 14%, 43%);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.buttonsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.porcentajeButton {
+    height: 48px;
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.porcentajeButton {
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+}
+
+.porcentajeButton:hover {
+    background-color: #9fe8df;
+    color: hsl(183, 100%, 15%);
+}
+
+
+.CustomInput {
+    height: 48px;
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    background-color: hsl(189, 47%, 97%);
+    color: hsl(183, 100%, 15%);
+    width: 100%;
+}
+
+.CustomInput:focus {
+    outline: 2px solid #26c2ad;
+    background-color: white;
+}
+
+.CustomInput::placeholder {
+    color: hsl(183, 100%, 15%);
+    opacity: 0.7;
+}
+
+
+
+/* SECCIÓN DE RESULTADOS */
+.results {
+    background-color: hsl(183, 100%, 15%);
+    width: 100%;
+    max-width: 50%;
+    max-height: 50%;
+    border-radius: 15px;
+    padding: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.results-article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    
+}
+
+.results-article p {
+    line-height: 1.5;
+    text-align: center;
+}
+
+.results-article span[style] {
+    color: hsl(184, 14%, 56%) !important;
+    font-size: 14px;
+}
+
+.price-result1,
+.price-result2 {
+    color: #26c2ad;
+    font-size: 3rem;
+    font-weight: 700;
+    
+}
+
+.buttonReset {
+    background-color: hsl(184, 69%, 25%);
+    color: hsl(184, 25%, 27%);
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: auto;
+    width: 100%;
+}
+
+.buttonReset-active:hover {
+    background-color: #9fe8df;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
+.porcentajeButton.active {
+    background-color: #9fe8df !important;
+    color: hsl(183, 100%, 15%) !important;
+}
+
+#spanPeople{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Quitar las flechas de los input */
+
+/* Para navegadores Webkit (Chrome, Safari, Edge) */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Para Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 25px;
+        gap: 30px;
+        height: auto;
+        max-width: 100%;
+    }
+
+    body {
+        padding: 0;
+        padding-top: 50px;
+    }
+
+    .calculatorContainer {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .results {
+        width: 100%;
+        max-width: none;
+        display: flex;
+        justify-content: space-between;
+        margin: 10px auto;
+        padding: auto;
+    }
+
+    .buttonsContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .porcentajeButton,
+    .CustomButton {
+        width: 100%;
+        font-size: 20px;
+        height: 44px;
+    }
+
+    .amount input,
+    .numberOfPeople input {
+        width: 100%;
+        font-size: 20px;
+        height: 60px;
+    }
+
+    .results-article {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 0;
+       
+    }
+
+    .price-result1,
+    .price-result2 {
+        font-size: 2rem;
+        
+    }
+
+    
+    .buttonReset {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 1440px) {
+    body {
+        padding: 50px;
+    }
+
+    .container {
+        max-width: 920px;
+    }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles.css">
+
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="img">
+    <img src="./images/logo.svg" alt="" class="imgBill">
+  </div>
+
+  <div class="container">
+
+    <div class="calculatorContainer">
+      <div class="amount">
+        <p class="Bill">
+          Bill
+        </p>
+        <img src="./images/icon-dollar.svg" alt="">
+        <input type="number" placeholder="0" value="0" min="1" class="input1">
+      </div>
+
+      <div class="selectorPorcentajes" id="selector">
+        <p class="SelectTip">
+          Select Tip %
+        </p>
+        <div class="buttonsContainer">
+          <button class="porcentajeButton" id="porcentaje1" value="5">5%</button>
+          <button class="porcentajeButton" id="porcentaje2" value="10">10%</button>
+          <button class="porcentajeButton" id="porcentaje3" value="15">15%</button>
+          <button class="porcentajeButton" id="porcentaje4" value="25">25%</button>
+          <button class="porcentajeButton" id="porcentaje5" value="50">50%</button>
+          <input type="number" class="CustomInput" placeholder="Custom" min="0">
+
+        </div>
+      </div>
+
+      <div class="numberPeople-container" id="numberPeople">
+        <span id="spanPeople">Number of People</span>
+        <div class="numberOfPeople">
+          <img src="./images/icon-person.svg" alt="">
+          <input type="number" src="./images/icon-person.svg" placeholder="0" min="1" class="input2">
+        </div>
+      </div>
+
+    </div>
+    <div class="results">
+      <article class="results-article">
+        <div>
+          <h4>Tip Amount</h4>
+          <span style="color: hsl(184, 14%, 56%);">/person</span>
+        </div>
+        <span class="price-result1">$0.00</span>
+      </article>
+      <article class="results-article">
+        <div>
+          <h4>
+            Total
+          </h4>
+          <span style="color: hsl(184, 14%, 56%);">/person</span>
+        </div>
+        <span class="price-result2">$0.00</span>
+      </article>
+
+      <button class="buttonReset">RESET</button>
+    </div>
+  </div>
+  <script src="./index.js"></script>
+</body>
+
+</html>
