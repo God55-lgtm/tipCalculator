@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let porcentajeMonto = 0;
     let errorSpan = null;
 
+
+
+
     // Guardar el estado original del botón reset
     const originalResetBg = getComputedStyle(buttonReset).backgroundColor;
     const originalResetColor = getComputedStyle(buttonReset).color;
@@ -26,9 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
             errorSpan.style.position = 'absolute';
             errorSpan.style.right = '0';
             errorSpan.style.top = '0';
+            errorSpan.style.fontSize = '15px';
+            peopleInput.style.border = 'solid';
+            peopleInput.style.borderColor = 'hsla(22, 71%, 57%, 1.00)';
+
             elementoPadreSpan.appendChild(errorSpan);
         }
     };
+
+
 
     // Función para ocultar el error
     const ocultarError = () => {
@@ -38,10 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-   
+
     const formatNumber = (num) => {
         if (num >= 1000) {
-            
+
             return num.toLocaleString('en-US', {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2
@@ -99,14 +108,14 @@ document.addEventListener('DOMContentLoaded', () => {
         priceResult1.textContent = '$0.00';
         priceResult2.textContent = '$0.00';
         ocultarError();
-        
+
         // Restablecer botones de porcentaje
         document.querySelectorAll('.porcentajeButton').forEach(button => {
             button.classList.remove('active');
             button.style.backgroundColor = '';
             button.style.color = '';
         });
-        
+
         // Restaurar estilo original del botón reset
         buttonReset.style.backgroundColor = originalResetBg;
         buttonReset.style.color = originalResetColor;
@@ -127,13 +136,13 @@ document.addEventListener('DOMContentLoaded', () => {
     peopleInput.addEventListener('input', (e) => {
         // Validar que solo se permitan números enteros
         let inputValue = e.target.value;
-        
+
         // Si contiene decimales, eliminarlos
         if (inputValue.includes('.')) {
             inputValue = inputValue.split('.')[0];
             e.target.value = inputValue;
         }
-        
+
         // Si está vacío, establecer a 0
         if (inputValue === '') {
             e.target.value = '0';
@@ -142,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             const newValue = parseInt(inputValue) || 0;
             PeopleValue = newValue;
-            
+
             // Validar error SOLO para el input de personas
             if (newValue === 0) {
                 mostrarError();
@@ -150,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ocultarError();
             }
         }
-        
+
         calcular();
         actualizarBotonReset();
     });
@@ -163,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         porcentajeMonto = parseFloat(e.target.value) || 0;
-        
+
         calcular();
         actualizarBotonReset();
     });
@@ -185,18 +194,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 actualizarBotonReset();
             }
         }
-        
-        
+
+
         if (event.target === peopleInput && event.target.value.includes('.')) {
             event.target.value = event.target.value.split('.')[0];
             PeopleValue = parseInt(event.target.value) || 0;
-            
+
             if (PeopleValue === 0) {
                 mostrarError();
             } else {
                 ocultarError();
             }
-            
+
             calcular();
             actualizarBotonReset();
         }
@@ -215,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Prevenir entrada de decimales en peopleInput
     peopleInput.addEventListener('keydown', (e) => {
-        
+
         if (e.key === '.' || e.key === ',') {
             e.preventDefault();
         }
@@ -234,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.style.backgroundColor = '';
                 button.style.color = '';
             });
-            
+
             event.target.classList.add('active');
             event.target.style.backgroundColor = 'hsl(172, 67%, 45%)';
             event.target.style.color = 'hsl(183, 100%, 15%)';

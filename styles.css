@@ -91,6 +91,7 @@ body {
     font-size: 24px;
     font-weight: 700;
     margin-top: 5px;
+    outline: none;
 }
 
 
@@ -136,9 +137,10 @@ body {
     font-size: 24px;
     font-weight: 700;
     margin-top: 5px;
-
+    outline: none;
 
 }
+
 
 
 /* BOTONES DE PORCENTAJE */
@@ -274,6 +276,7 @@ button:hover {
 #spanPeople{
     display: flex;
     justify-content: space-between;
+    font-size: 15px;
 }
 
 /* Quitar las flechas de los input */
@@ -335,7 +338,8 @@ input[type=number] {
     .numberOfPeople input {
         width: 100%;
         font-size: 20px;
-        height: 60px;
+        height: 40px;
+        align-items: center;
     }
 
     .results-article {
