@@ -127,10 +127,14 @@ document.addEventListener('DOMContentLoaded', () => {
     buttonReset.addEventListener('click', resetCompleto);
 
     billInput.addEventListener('input', (e) => {
-        BillValue = parseFloat(e.target.value) || 0;
+        let currentValue = e.target.value
+        BillValue = parseFloat(e.target.value);
         // Solo calcular y actualizar, NO validar error
         calcular();
         actualizarBotonReset();
+        if(currentValue === "0" ){
+           e.target.value = e.data
+        }
     });
 
     peopleInput.addEventListener('input', (e) => {

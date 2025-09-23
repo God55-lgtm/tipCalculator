@@ -8,7 +8,7 @@
 }
 
 * {
-    font-size:20px;
+    font-size: 20px;
     font-family: 'Space Mono';
     margin: 0;
     padding: 0;
@@ -72,7 +72,7 @@ body {
 .amount img {
     position: absolute;
     left: 15px;
-    top: 55px;
+    margin-top: 18px;
     z-index: 2;
     width: 15px;
     height: 15px;
@@ -101,7 +101,7 @@ body {
     flex-direction: column;
     text-align: left;
     gap: 10px;
-    margin: 40px auto;
+    margin: 35px auto;
     color: hsl(184, 14%, 56%);
     position: relative;
 }
@@ -117,8 +117,7 @@ body {
 .numberOfPeople img {
     position: absolute;
     left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-top: 18px;
     z-index: 2;
     width: 15px;
     height: 15px;
@@ -128,7 +127,7 @@ body {
     background-color: hsl(189, 47%, 97%);
     border: none;
     width: 100%;
-    height: 50%;
+    /* height: 40%; */
     padding: 5px;
     padding-left: 40px;
     color: hsl(183, 100%, 15%);
@@ -183,7 +182,7 @@ body {
 
 
 .CustomInput {
-    height: 48px;
+    height: 30px;
     border: none;
     border-radius: 5px;
     font-size: 24px;
@@ -224,7 +223,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
-    
+
 }
 
 .results-article p {
@@ -242,7 +241,7 @@ body {
     color: #26c2ad;
     font-size: 3rem;
     font-weight: 700;
-    
+
 }
 
 .buttonReset {
@@ -273,7 +272,7 @@ button:hover {
     color: hsl(183, 100%, 15%) !important;
 }
 
-#spanPeople{
+#spanPeople {
     display: flex;
     justify-content: space-between;
     font-size: 15px;
@@ -284,13 +283,13 @@ button:hover {
 /* Para navegadores Webkit (Chrome, Safari, Edge) */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Para Firefox */
 input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
 /* RESPONSIVE DESIGN */
@@ -342,20 +341,26 @@ input[type=number] {
         align-items: center;
     }
 
+    .amount img {
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
+    }
+
     .results-article {
         display: flex;
         justify-content: space-between;
         margin-left: 0;
-       
+
     }
 
     .price-result1,
     .price-result2 {
         font-size: 2rem;
-        
+
     }
 
-    
+
     .buttonReset {
         width: 100%;
         margin-left: 0;
@@ -370,5 +375,13 @@ input[type=number] {
 
     .container {
         max-width: 920px;
+    }
+
+    .amount input,
+    .numberOfPeople input {
+        width: 100%;
+        font-size: 20px;
+
+        align-items: center;
     }
 }
